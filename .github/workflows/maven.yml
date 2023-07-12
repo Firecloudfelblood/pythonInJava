@@ -41,7 +41,10 @@ jobs:
         pip install -r src/main/python/ImageValidation/requirements.txt
     
     - name: Build with Maven
-      run: mvn -B /main/java/LlmarSimplon.java --file pom.xml
+      run: mvn compile
+      
+    - name: Run Java
+    - run: java target/classes/LlamarSimplon
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
